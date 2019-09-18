@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#First bash script
+
+echo "Hello World"
+
