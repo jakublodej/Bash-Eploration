@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+if [ $# -lt 1 ]
+then
+        echo "Poprawna skladnia: $0 katalog1 katalog2 ..."
+        exit 1
+fi
+
+n=0
+while [ $1 ]
+do
+        if [ -d $1 ]
+        then
+			fullpath=$(readlink -f $1)
+			echo $fullpath
+			n=$((n+1))
+        else
+			echo "$1 - nie jest katalogiem"
+        fi
+       
+        shift
+done
+
