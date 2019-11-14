@@ -35,12 +35,20 @@ done
 # przykłady użycia 
 #Zamknięcie terminalu
 # kuba@kuba-VirtualBox:~$. katalogi
-#Wyświetli się informacja że check nie jest katalogiem
-# kuba@kuba-VirtualBox:~$. katalogi check     
 
-# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Myzuka Obrazy a     ->>>
+#Wyświetli się informacja że check nie jest katalogiem
+# kuba@kuba-VirtualBox:~$. katalogi check    ->  check nie jest katalogiem 
+
+#Wyświetli się poprawny katalog
+# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia FIlmy a     ->>>
 #			->/home/kuba/Dokumenty
-#			->/home/kuba/Muzyka
-#			->/home/kuba/Obrazy
-#			
+#			->/home/kuba/Zdjęcia
+#			->/home/kuba/Filmy
+
+#Wyświetli się katalog z błędem
+# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia Filmy check a     ->>>
+#			->/home/kuba/Dokumenty
+#			->/home/kuba/Zdjęcia
+#			->/home/kuba/Filmy
+#			-> check nie jest katalogiem 
 
