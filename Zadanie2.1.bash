@@ -40,13 +40,13 @@ done
 # kuba@kuba-VirtualBox:~$. katalogi check    ->  check nie jest katalogiem 
 
 #Wyświetli się poprawny katalog
-# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia FIlmy a     ->>>
+# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia Filmy      ->>>
 #			->/home/kuba/Dokumenty
 #			->/home/kuba/Zdjęcia
 #			->/home/kuba/Filmy
 
 #Wyświetli się katalog z błędem
-# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia Filmy check a     ->>>
+# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Zdjęcia Filmy check      ->>>
 #			->/home/kuba/Dokumenty
 #			->/home/kuba/Zdjęcia
 #			->/home/kuba/Filmy
