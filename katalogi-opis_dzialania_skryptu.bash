@@ -1,33 +1,46 @@
 #!/bin/zsh
 
-if [ $# -lt 1 ] 					#sprawdza czy podane zostaly jakies arg / sprawdza czy liczba jest mniejsza od jedynki
-then
-        echo "Poprawna skladnia: $0 katalog1 katalog2 ..."	#jeśli jest $0 to wypisz i
-        exit 1												# zamyka terminal 
-fi
+# Sprawdzenie czy wprowadzone argumenty są mniejsze od 1 
+if [ $# -lt 1 ] 
 
-n=0													# nie wiem po co jest tu umieszczona ta zmienna, pewnie aby ułatwić dalsza czesc zadania
-while [ $1 ]										#sprawdzamy dopuki na $1 jest jakis argument
+then
+	#Powinno być $1
+        echo "Poprawna skladnia: $0 katalog1 katalog2 ..."	
+	#Zamknięcie terminalu
+        exit 1												
+fi
+#Deklaracja zmiennej od której rozpoczynamy pętlę warunkową while
+n=0				
+#Pętla warunkowa while, dopóki $1 jest argumentem, pętla jest wykonywana
+while [ $1 ]		
 do
-        if [ -d $1 ]							# -d plik sprawdza czy plik jest katalogiem 
+	#Sprawdzenie czy plik jest katalogiem
+        if [ -d $1 ]							
         then
-			fullpath=$(readlink -f $1)			#pobiera cala sciezke katalogu
-			echo $fullpath						#wypisuje na ekran sciezke
-			n=$((n+1))							#dodajemy do n plus jeden
+			#Pobranie całej ściezki katalogu
+			fullpath=$(readlink -f $1)
+			#Wyświetlenie na ekranie ściezki katalogu
+			echo $fullpath
+			#Kontynuowanie pętli (dodawanie do n kolejnych argumentów)
+			n=$((n+1))							
         else
-			echo "$1 - nie jest katalogiem"				# gdy podany argument nie jest katalogiem wypisz 
+			#Wyświetlenie informacji gdy podany argument nie jest katalogiem
+			echo "$1 - nie jest katalogiem"				
         fi
-       
-        shift								#powoduje przesuniecie sie na kolejny arg 
+        #Przejście na kolejny argument
+        shift								
 done
 
 
 # przykłady użycia 
-# pawel@pawel-VirtualBox:~$. katalogi        -> spowoduje zamkniecie terminalu
-# pawel@pawel-VirtualBox:~$. katalogi adb     ->  adb nie jest katalogiem        * nie ma takiego katalogu w bieżacym miejscu
-# pawel@pawel-VirtualBox:~$. katalogi Dokumenty Myzuka Obrazy adb     ->>>
-#			->/home/pawel/Dokumenty
-#			->/home/pawel/Muzyka
-#			->/home/pawel/Obrazy
-#			->adb nie jest katalogiem
+#Zamknięcie terminalu
+# kuba@kuba-VirtualBox:~$. katalogi
+#Wyświetli się informacja że check nie jest katalogiem
+# kuba@kuba-VirtualBox:~$. katalogi check     
+
+# kuba@kuba-VirtualBox:~$. katalogi Dokumenty Myzuka Obrazy a     ->>>
+#			->/home/kuba/Dokumenty
+#			->/home/kuba/Muzyka
+#			->/home/kuba/Obrazy
+#			
 
